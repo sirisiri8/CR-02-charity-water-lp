@@ -17,7 +17,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Body: background image & main layout */
     body {
       background: url('img/JS_20170301_5946.jpg') no-repeat center center/cover;
       min-height: 100vh;
@@ -26,7 +25,7 @@
       color: white;
     }
 
-    /* Header: logo + navigation + support button */
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -48,18 +47,20 @@
       gap: 20px;
     }
 
-    .support-btn {
-      background-color: #003366;
+    /* Buttons now match story text color */
+    .support-btn, .donate-btn {
+      background-color: #2E9DF7; /* Same as Real Impact text */
       color: white;
       border: none;
-      padding: 12px 24px;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 18px;
       transition: all 0.3s ease;
     }
-    .support-btn:hover {
-      background-color: #77a8bb;
+    .support-btn { padding: 12px 24px; font-size: 18px; }
+    .donate-btn { padding: 20px 40px; font-size: 22px; border-radius: 8px; }
+
+    .support-btn:hover, .donate-btn:hover {
+      background-color: #1A6FBF; /* Slightly darker on hover */
       transform: scale(1.1);
     }
 
@@ -78,7 +79,7 @@
       color: #2E9DF7;
     }
 
-    /* Hero Section: centered headline, subheadline, and CTA */
+    /* Hero Section */
     .hero {
       display: flex;
       flex-direction: column;
@@ -90,22 +91,8 @@
     }
     .hero h2 { font-size: 46px; margin-bottom: 28px; line-height: 1.2; }
     .hero p { font-size: 20px; margin-bottom: 38px; line-height: 1.5; }
-    .donate-btn {
-      background-color: #003366;
-      color: white;
-      border: none;
-      padding: 20px 40px;
-      border-radius: 8px;
-      font-size: 22px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .donate-btn:hover {
-      background-color: #77a8bb;
-      transform: scale(1.1);
-    }
 
-    /* Story Section: image + text */
+    /* Story Section */
     .story {
       display: flex;
       align-items: center;
@@ -128,7 +115,7 @@
     .story-content h2 { color: #2E9DF7; margin-bottom: 20px; font-size: 36px; }
     .story-content p { font-size: 18px; line-height: 1.5; }
 
-    /* Media Queries for Responsive Design */
+    /* Media Queries */
     @media (max-width: 1024px) {
       .hero h2 { font-size: 38px; }
       .hero p { font-size: 18px; }
