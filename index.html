@@ -11,11 +11,12 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Proxima Nova', 'Avenir', sans-serif;
+      transition: all 0.3s ease;
     }
 
     body {
       background: url('img/Madagascar_2019_CG-2679.jpg') no-repeat center center/cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -30,11 +31,15 @@
       padding: 20px;
       background: white;
       color: black;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
     }
 
     header img {
       height: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
     }
 
     .header-right {
@@ -52,26 +57,29 @@
       cursor: pointer;
       font-size: 18px;
       font-family: 'Proxima Nova', 'Avenir', sans-serif;
-      transition: transform 0.2s ease, background-color 0.2s ease;
+      transition: all 0.3s ease;
+    }
+
+    .support-btn:hover {
+      background-color: #77a8bb;
+      transform: scale(1.1);
     }
 
     nav {
       display: flex;
       gap: 15px;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
     }
 
     nav a {
       color: black;
       text-decoration: none;
       font-size: 20px;
-      transition: transform 0.2s ease, font-size 0.2s ease;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
       transform: scale(1.1);
-      font-size: 21px;
+      color: #2E9DF7;
     }
 
     .hero {
@@ -88,21 +96,18 @@
     .hero-content {
       max-width: 450px;
       text-align: right;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
     }
 
     .hero h2 {
       font-size: 46px;
       margin-bottom: 28px;
       line-height: 1.2;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
     }
 
     .hero p {
       font-size: 20px;
       margin-bottom: 38px;
       line-height: 1.5;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
     }
 
     .donate-btn {
@@ -113,31 +118,74 @@
       border-radius: 8px;
       font-size: 22px;
       cursor: pointer;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
-      transition: transform 0.2s ease, background-color 0.2s ease;
+      transition: all 0.3s ease;
     }
 
-    .donate-btn:hover, .support-btn:hover {
+    .donate-btn:hover {
       background-color: #77a8bb;
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
+    /* Responsive Design */
+    @media (max-width: 1024px) {
       .hero h2 {
-        font-size: 36px;
+        font-size: 38px;
       }
       .hero p {
         font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        min-height: auto;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        justify-content: center;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .hero-content {
+        max-width: 90%;
+      }
+      .hero h2 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 16px;
       }
       .donate-btn {
         font-size: 20px;
         padding: 16px 32px;
       }
       nav {
+        flex-wrap: wrap;
         gap: 10px;
       }
       nav a {
         font-size: 18px;
+      }
+      .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 26px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+      .donate-btn {
+        font-size: 18px;
+        padding: 12px 24px;
       }
     }
   </style>
