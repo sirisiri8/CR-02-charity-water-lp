@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charity: Water Landing Page</title>
-  <!-- Google Fonts: Montserrat & Nunito -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-
+  
   <style>
     /* Global Reset & Base Styles */
     * {
@@ -17,45 +17,37 @@
       transition: all 0.3s ease;
     }
 
-    /* Body: background image, layout, text color */
+    /* Body: background image & main layout */
     body {
       background: url('img/Madagascar_2019_CG-2679.jpg') no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       color: white;
     }
 
-    /* Header Section: contains logo, nav links, and support button */
+    /* Header: logo + navigation + support button */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       padding: 20px;
       background: white;
       color: black;
     }
-
-    /* Logo: responsive width, hover effect */
     header img {
       width: 200px; 
-      height: auto;  /* Maintain aspect ratio */
+      height: auto; 
       transition: transform 0.3s ease;
     }
-    header img:hover {
-      transform: scale(1.1);
-    }
+    header img:hover { transform: scale(1.1); }
 
-    /* Header Right Container: nav links + support button */
     .header-right {
       display: flex;
       align-items: center;
       gap: 20px;
     }
 
-    /* Support Button Styling */
     .support-btn {
       background-color: #003366;
       color: white;
@@ -64,64 +56,40 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 18px;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
       transition: all 0.3s ease;
     }
-    /* Support Button Hover Effect */
     .support-btn:hover {
       background-color: #77a8bb;
       transform: scale(1.1);
     }
 
-    /* Navigation Links Container */
     nav {
       display: flex;
       gap: 15px;
     }
-    /* Navigation Link Styling */
     nav a {
       color: black;
       text-decoration: none;
       font-size: 20px;
       transition: all 0.3s ease;
     }
-    /* Navigation Link Hover Effect */
     nav a:hover {
       transform: scale(1.1);
       color: #2E9DF7;
     }
 
-    /* Hero Section: main banner with text and button */
+    /* Hero Section: centered headline, subheadline, and CTA */
     .hero {
-      flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.4);
-      text-align: right;
-      font-family: 'Proxima Nova', 'Avenir', sans-serif;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.4);
     }
-
-    /* Hero Content Container */
-    .hero-content {
-      max-width: 450px;
-      text-align: right;
-    }
-    /* Hero Headline */
-    .hero h2 {
-      font-size: 46px;
-      margin-bottom: 28px;
-      line-height: 1.2;
-    }
-    /* Hero Paragraph */
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 38px;
-      line-height: 1.5;
-    }
-
-    /* Donate Button Styling */
+    .hero h2 { font-size: 46px; margin-bottom: 28px; line-height: 1.2; }
+    .hero p { font-size: 20px; margin-bottom: 38px; line-height: 1.5; }
     .donate-btn {
       background-color: #003366;
       color: white;
@@ -132,68 +100,86 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    /* Donate Button Hover Effect */
     .donate-btn:hover {
       background-color: #77a8bb;
       transform: scale(1.1);
     }
 
-    /* Media Queries: responsive adjustments */
+    /* Story Section: image + text */
+    .story {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      background: #f4f8fb;
+      color: #222;
+      text-align: left;
+      flex-wrap: wrap;
+    }
+    .story img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .story-content {
+      max-width: 500px;
+    }
+    .story-content h2 { color: #2E9DF7; margin-bottom: 20px; font-size: 36px; }
+    .story-content p { font-size: 18px; line-height: 1.5; }
+
+    /* Media Queries for Responsive Design */
     @media (max-width: 1024px) {
       .hero h2 { font-size: 38px; }
       .hero p { font-size: 18px; }
     }
-
     @media (max-width: 768px) {
       header { flex-direction: column; align-items: flex-start; }
-      .hero { justify-content: center; text-align: center; padding: 30px 20px; }
-      .hero-content { max-width: 90%; }
+      .hero { padding: 50px 20px; }
       .hero h2 { font-size: 32px; }
       .hero p { font-size: 16px; }
-      .donate-btn { font-size: 20px; padding: 16px 32px; }
+      .story { flex-direction: column; text-align: center; gap: 20px; }
+      .story-content { max-width: 90%; }
+      .story img { max-width: 80%; }
       nav { flex-wrap: wrap; gap: 10px; }
       nav a { font-size: 18px; }
-      .header-right { flex-direction: column; align-items: flex-start; gap: 10px; }
-      header img { width: 450px; } /* Adjust logo width for tablets */
     }
-
     @media (max-width: 480px) {
       .hero h2 { font-size: 26px; }
       .hero p { font-size: 14px; }
       .donate-btn { font-size: 18px; padding: 12px 24px; }
-      header img { width: 120px; } /* Logo width for mobile */
+      header img { width: 120px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section: Logo, navigation, support button -->
+  <!-- Header Section -->
   <header>
-    <!-- Company Logo -->
     <img src="img/Screenshot 2025-08-31 100241.png" alt="Company Logo">
-
-    <!-- Right Side Container: Navigation + Support Button -->
     <div class="header-right">
-      <!-- Navigation Links -->
       <nav>
         <a href="#about">About Us</a>
         <a href="#impact">Our Impact</a>
         <a href="#gallery">Gallery</a>
       </nav>
-      <!-- Support Button -->
       <button class="support-btn">More Ways to Support</button>
     </div>
   </header>
 
-  <!-- Hero Section: Main banner with headline, text, and donate button -->
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <!-- Headline -->
-      <h2>Change the Future with Clean Water</h2>
-      <!-- Subheadline/Description -->
-      <p>Your gift of simply $30 brings clean water and with it, stories of children thriving in school, families building brighter futures, and communities filled with hope.</p>
-      <!-- Call-to-Action Button -->
-      <button class="donate-btn">Donate Now!</button>
+    <h2>Change the Future with Clean Water</h2>
+    <p>Your gift of simply $30 brings clean water and with it, stories of children thriving in school, families building brighter futures, and communities filled with hope.</p>
+    <button class="donate-btn">Donate Now!</button>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story">
+    <img src="img/impact-image.jpg" alt="Child with clean water">
+    <div class="story-content">
+      <h2>Real Impact: Meet Amina</h2>
+      <p>Amina used to walk miles each day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.</p>
     </div>
   </section>
 
